@@ -13,6 +13,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+$router->group(['prefix' => 'v1'],function () use ($router){
+
+    $router->group(['prefix' => 'province'], function () use($router) {
+        $router->get('get/all',['uses' => 'Province\GetAllController']);
+        $router->get('get/province/zone',['uses' => 'Province\GetProvinceByIdZone']);
+    });
+
+    $router->group(['prefix' => 'city'], function () use($router) {
+//        $router->get('get/all',['uses' => 'Province\GetAllController']);
+        $router->get('get/city/province',['uses' => 'City\GetCityByIdProvince']);
+    });
+
+    $router->group(['prefix' => 'city'], function () use($router) {
+//        $router->get('get/all',['uses' => 'Province\GetAllController']);
+        $router->get('get/destination/city',['uses' => 'Destination\GetDestinationByIdCity']);
+    });
+
 });
+

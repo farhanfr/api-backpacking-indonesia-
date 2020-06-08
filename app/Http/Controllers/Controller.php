@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Bus\DispatchesJobs;
+use App\Helper\ResponseHelper;
+use App\Http\Controllers\province\ProvinceHelper;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function response(){
+        return new ResponseHelper();
+    }
+
+    public function helper(){
+        return new Helper();
+    }
+}
+
+Class Helper{
+
+    public function province(){
+        return new ProvinceHelper();
+    }
 }
