@@ -31,12 +31,12 @@ class GetDestinationByIdCity extends Controller
 
         }
 
-        if(!$destination = Destination::with(['city'])->where('city_id','=',$cityId)->first()) {
+        if(!$destination = Destination::with(['city'])->where('city_id','=',$cityId)->get()) {
 
             return $this->response()->failMessage(['Sorry, destination you are looking not available']);
 
         }
 
-        return $this->response()->successData('Success to get destination','data',$destination);
+        return $this->response()->successData2($destination);
     }
 }

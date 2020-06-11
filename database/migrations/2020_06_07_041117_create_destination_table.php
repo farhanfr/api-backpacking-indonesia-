@@ -18,6 +18,7 @@ class CreateDestinationTable extends Migration
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('city');
             $table->string('name_destination',255);
+            $table->text('desc_destination');
             $table->string('photo',255)->nullable();
             $table->timestamps();
         });

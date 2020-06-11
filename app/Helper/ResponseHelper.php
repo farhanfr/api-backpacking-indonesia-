@@ -18,6 +18,10 @@ class ResponseHelper{
         ]);
     }
 
+    public function successData2($data) {
+        return response()->json($data);
+    }
+
     public function failMessage($message) {
         return response()->json([
             'status' => false,

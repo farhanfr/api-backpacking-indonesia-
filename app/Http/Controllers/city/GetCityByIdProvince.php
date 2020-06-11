@@ -37,6 +37,6 @@ class GetCityByIdProvince extends Controller
 
         }
 
-        return $this->response()->successData('Success to get city','data',$city);
+        return $this->response()->successData2($city);
     }
 }

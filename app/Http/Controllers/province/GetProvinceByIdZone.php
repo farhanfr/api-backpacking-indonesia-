@@ -27,7 +27,7 @@ class GetProvinceByIdZone extends Controller
             ['id','=',$idZone],
         ])->first()) {
 
-            return $this->response()->failMessage(['Sorry, This zones is not available yet']);
+            return $this->response()->failMessage(['Sorry2, This zones is not available yet']);
 
         }
 
@@ -37,6 +37,6 @@ class GetProvinceByIdZone extends Controller
 
         }
 
-        return $this->response()->successData('Success to get province','data',$province);
+        return $this->response()->successData2($province);
     }
 }

@@ -18,6 +18,7 @@ $router->group(['prefix' => 'v1'],function () use ($router){
     $router->group(['prefix' => 'province'], function () use($router) {
         $router->get('get/all',['uses' => 'Province\GetAllController']);
         $router->get('get/province/zone',['uses' => 'Province\GetProvinceByIdZone']);
+        $router->get('search',['uses' => 'Province\SearchProvinceController']);
     });
 
     $router->group(['prefix' => 'city'], function () use($router) {
