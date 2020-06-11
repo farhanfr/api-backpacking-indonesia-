@@ -24,11 +24,13 @@ $router->group(['prefix' => 'v1'],function () use ($router){
     $router->group(['prefix' => 'city'], function () use($router) {
 //        $router->get('get/all',['uses' => 'Province\GetAllController']);
         $router->get('get/city/province',['uses' => 'City\GetCityByIdProvince']);
+        $router->get('search',['uses' => 'City\SearchCityController']);
     });
 
-    $router->group(['prefix' => 'city'], function () use($router) {
+    $router->group(['prefix' => 'destination'], function () use($router) {
 //        $router->get('get/all',['uses' => 'Province\GetAllController']);
         $router->get('get/destination/city',['uses' => 'Destination\GetDestinationByIdCity']);
+        $router->get('search',['uses' => 'Destination\SearchDestinationController']);
     });
 
 });

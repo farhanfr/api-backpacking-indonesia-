@@ -1,24 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Province;
+namespace App\Http\Controllers\City;
 
-use App\Province;
+use App\City;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 
-class SearchProvinceController extends Controller
+class SearchCityController extends Controller
 {
     function __invoke(Request $request)
     {
-        $status = false;
-        $search = $request->input('name_province');
-        $zone_id = $request->input('zone_id');
+        $search = $request->input('name_city');
+        $province_id = $request->input('province_id');
 
-        if ($process = Province::with(['zone'])
-            ->where('name_province','like',"%".$search."%")
+        if ($process = City::with(['province'])
+            ->where('name_city','like',"%".$search."%")
 //            ->where('name_province','like','%'.preg_replace('/\s+/', '', $search).'%')
-            ->where('zone_id','=',$zone_id)
+            ->where('province_id','=',$province_id)
             ->get()){
 //            return $this->response()->failMessage(['province not found']);
             if (count($process) > 0){
