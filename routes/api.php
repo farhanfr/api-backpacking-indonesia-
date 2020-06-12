@@ -33,5 +33,11 @@ $router->group(['prefix' => 'v1'],function () use ($router){
         $router->get('search',['uses' => 'Destination\SearchDestinationController']);
     });
 
+    $router->group(['prefix' => 'user'], function () use($router) {
+//        $router->get('get/all',['uses' => 'Province\GetAllController']);
+        $router->post('login',['uses' => 'User\LoginUserController']);
+    });
+
+
 });
 
