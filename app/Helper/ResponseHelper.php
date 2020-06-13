@@ -15,6 +15,7 @@ class ResponseHelper{
             'status' => true,
             'message' => $message,
             $key => $data
+
         ]);
     }
 

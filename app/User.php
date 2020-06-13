@@ -10,5 +10,5 @@ class User extends Model
     protected $fillable = ['name_user ','no_hp','email_user','username','password','photo_user','token'];
     public $timestamps = FALSE;
 
-    protected $hidden = ['password','token','secret'];
+    protected $hidden = ['password','secret'];
 }

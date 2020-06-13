@@ -15,6 +15,8 @@ class CreateDestinationTable extends Migration
     {
         Schema::create('destination', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('zone_id');
+            $table->foreign('zone_id')->references('id')->on('zone');
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('city');
             $table->string('name_destination',255);

@@ -31,11 +31,13 @@ $router->group(['prefix' => 'v1'],function () use ($router){
 //        $router->get('get/all',['uses' => 'Province\GetAllController']);
         $router->get('get/destination/city',['uses' => 'Destination\GetDestinationByIdCity']);
         $router->get('search',['uses' => 'Destination\SearchDestinationController']);
+        $router->get('search/quick',['uses' => 'Destination\SearchDestinationQuick']);
     });
 
     $router->group(['prefix' => 'user'], function () use($router) {
 //        $router->get('get/all',['uses' => 'Province\GetAllController']);
         $router->post('login',['uses' => 'User\LoginUserController']);
+        $router->put('logout',['uses' => 'User\LogoutUserController']);
     });
 
 
