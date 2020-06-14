@@ -40,6 +40,12 @@ $router->group(['prefix' => 'v1'],function () use ($router){
         $router->put('logout',['uses' => 'User\LogoutUserController']);
     });
 
+    $router->group(['prefix' => 'comment'], function () use($router) {
+        $router->post('destination/add',['uses' => 'Comment\DestinationAddController']);
+        $router->get('destination/get',['uses' => 'Comment\DestinationGetAllController']);
+
+    });
+
 
 });
 
